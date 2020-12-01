@@ -7,7 +7,7 @@ a {
 }
 kbd {
   border: 1px solid red;
-  width: 4em;
+  width: 4em; 
   height: 4em;
   display: inline-block;
   text-transform: uppercase;
@@ -21,9 +21,12 @@ kbd > button {
 }
 kbd:hover > button {
   display: inline-block;
+  color:  #c5c5c5;
+  background-color: #111;
 }
 body {
-  background: grey url(./wall.jpg) no-repeat center center;
+	background: grey url(./wall.jpg) no-repeat center center;
+	background-size: cover;
 }
 main {
   text-align: center;
