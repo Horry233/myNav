@@ -31,6 +31,7 @@ body {
 main {
   text-align: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -77,4 +78,37 @@ main {
   position: absolute;
   left: 4px;
   top: 2px;
+}
+ .search {
+  display: flex;
+  margin-bottom: 10px;
+}
+.search .input{
+  outline: none;
+  height: 40px;
+  width: 500px;
+  border: none;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  background: rgba(255,255,255,0.4);
+  font-size: 16px;
+  color:  white;
+  text-indent: 1em;
+}
+.search .button{
+  outline: none;
+  height: 40px;
+  width: 60px;
+  border: none;
+  border-left: 1px solid rgba(255,255,255,0.4);
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  text-align: center;
+  background: rgba(255,255,255,0.4);
+  color:  white;
+  font-size: 16px;
+  vertical-align: top;
+}
+.search .button:active{
+  background: rgba(255,255,255,0.1);
 }

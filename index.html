@@ -8,6 +8,9 @@
   <body>
     <!-- <header></header>	 -->
     <main>
+      <div class="search">
+        <input type="text" class="input"> <button class="button">search</button>
+      </div>
       <div class="wrapper" id="main"></div>
     </main>
     <!-- <footer></footer> -->
@@ -16,7 +19,10 @@
       var hashA = init()
       var keys = hashA["keys"]
       var hash = hashA["hash"]
-
+      var input = document.querySelector('.input')
+      var button = document.querySelector('.button')
+      console.log(input);
+      console.log(button);
       // 2. 生成键盘
       // 遍历 keys，生成 kbd 标签
       generateKeyboard(keys, hash)
@@ -120,15 +126,32 @@
 						
             div.appendChild(kbd)
           }
-        }
+        } 
       }
       function listenToUser(hash) {
         document.onkeypress = function (e) {
-					var key = e.key // q w e
-          var website = hash[key]
-          //location.href = 'http://'+website
-          window.open("http://" + website, "_blank")
+          if (input == document.activeElement) {
+              if(e.keyCode ==13) { // 回车搜素
+                button.click()
+              }
+            return
+          } else {        
+            if(e.keyCode > 96 && e.keyCode < 123) { // 控制在a-z之间
+              var key = e.key // q w e
+              var website = hash[key]
+              //location.href = 'http://'+website
+              window.open("http://" + website, "_blank")
+            }else if(e.keyCode ==13) { // 回车搜素
+              button.click()
+            }
+          }
         }
+
+        button.addEventListener('click',function() {
+          var value = input.value
+          window.open("http://baidu.com/s?wd=" + value, "_blank")
+        })
+        
       }
     </script>
   </body>
