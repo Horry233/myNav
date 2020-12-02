@@ -21,8 +21,6 @@
       var hash = hashA["hash"]
       var input = document.querySelector('.input')
       var button = document.querySelector('.button')
-      console.log(input);
-      console.log(button);
       // 2. 生成键盘
       // 遍历 keys，生成 kbd 标签
       generateKeyboard(keys, hash)
@@ -131,9 +129,9 @@
       function listenToUser(hash) {
         document.onkeypress = function (e) {
           if (input == document.activeElement) {
-              if(e.keyCode ==13) { // 回车搜素
-                button.click()
-              }
+            if(e.keyCode ==13) { // 回车搜素
+              button.click()
+            }
             return
           } else {        
             if(e.keyCode > 96 && e.keyCode < 123) { // 控制在a-z之间
