@@ -134,8 +134,10 @@
             }
             return
           } else {        
-            if(e.keyCode > 96 && e.keyCode < 123) { // 控制在a-z之间
-              var key = e.key // q w e
+            if((e.keyCode > 96 && e.keyCode < 123) || (e.keyCode > 64 && e.keyCode < 91)) { // 控制在a-z之间 A-Z之间
+              var key = e.key
+              key = key.toLowerCase()
+              // var key = e.key // q w e
               var website = hash[key]
               //location.href = 'http://'+website
               window.open("http://" + website, "_blank")
